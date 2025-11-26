@@ -1,0 +1,29 @@
+/* src/index.css */
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Estilos para la barra de desplazamiento (Scrollbar) */
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #111827; /* gray-900 */
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #374151; /* gray-700 */
+    border-radius: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #4b5563; /* gray-600 */
+  }
+}
+
+/* Ajustes globales */
+body {
+  background-color: #111827; /* gray-900 */
+  color: white;
+}
