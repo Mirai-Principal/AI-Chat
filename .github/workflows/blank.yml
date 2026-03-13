@@ -17,10 +17,6 @@ jobs:
     env:
       platform: linux
       region: eastus
-      account: acr-mirai-principal
-      registry: acr-mirai-principal.azurecr.io
-      image: ai-chat
-      tag: latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -30,17 +26,14 @@ jobs:
         run: |
           echo Plataforma: $platform
           echo Region: $region
-          echo Cuenta: $account
-          echo Registro: $registry
-          echo Imagen: $image
-          echo Tag: $tag
-          
+
       - name: imprimir variables
         if: ${{ env.platform == 'windows' }}
         run: |
           echo Plataforma: ${{ env.platform }}
           echo Region: ${{ env.region }}
-          echo Cuenta: ${{ env.account }}
-          echo Registro: ${{ env.registry }}
-          echo Imagen: ${{ env.image }}
-          echo Tag: ${{ env.tag }}
+          
+      - name: Mostrar variables por defecto
+        run: |
+          echo Plataforma: ${{ github.action }}
+          echo Region: ${{ toJson(github.event) }}
