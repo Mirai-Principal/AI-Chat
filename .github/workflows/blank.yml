@@ -32,8 +32,8 @@ jobs:
         run: |
           echo Plataforma: ${{ env.platform }}
           echo Region: ${{ env.region }}
-          
+
       - name: Mostrar variables por defecto
         run: |
-          echo Plataforma: ${{ github.action }}
-          echo Region: ${{ toJson(github.event) }}
+          echo Action: ${{ toJson(github.action) }}
+          echo Event: ${{ toJson(github.event) }}
