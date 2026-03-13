@@ -35,5 +35,4 @@ jobs:
 
       - name: Mostrar variables por defecto
         run: |
-          echo Action: ${{ toJson(github.action) }}
-          echo Event: ${{ toJson(github.event) }}
+          echo "Event: ${{ toJson(github.event) }}"
