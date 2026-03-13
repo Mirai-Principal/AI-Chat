@@ -35,4 +35,6 @@ jobs:
 
       - name: Mostrar variables por defecto
         run: |
-          echo "Event: ${{ toJson(github.event) }}"
+          echo Actor: ${{ github.actor }}
+          echo repositorio: $GITHUB_REPOSITORY
+          echo Event: ${{ toJson(github.event) }}
