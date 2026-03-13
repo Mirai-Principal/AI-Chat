@@ -8,16 +8,29 @@ on:
   pull_request:
     branches: [ "main" ]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
   build:
     runs-on: ubuntu-latest
 
+    env:
+      platform: linux
+      region: eastus
+      account: acr-mirai-principal
+      registry: acr-mirai-principal.azurecr.io
+      image: ai-chat
+      tag: latest
+
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: imprimir mensaje
         run: echo holaaaaa
+      - name: imprimir variables
+        run: |
+          echo Plataforma: $platform
+          echo Region: $region
+          echo Cuenta: $account
+          echo Registro: $registry
+          echo Imagen: $image
+          echo Tag: ${{ env.tag }}
