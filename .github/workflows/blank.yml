@@ -38,6 +38,11 @@ jobs:
           echo Plataforma: ${{ env.platform }}
           echo Region: ${{ env.region }}
 
+      - name: Verificar usuario
+        if: ${{ env.user != '' && env.password != '' }}
+        run: |
+          echo "Usuario y contraseña correctos"
+
       - name: Mostrar variables por defecto
         run: |
           echo Actor: ${{ github.actor }}
