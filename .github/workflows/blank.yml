@@ -18,6 +18,9 @@ jobs:
       platform: linux
       region: eastus
 
+      user: ${{ secrets.USER }}
+      password: ${{ secrets.PASSWORD }}
+
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: imprimir mensaje
@@ -26,6 +29,8 @@ jobs:
         run: |
           echo Plataforma: $platform
           echo Region: $region
+          echo Usuario: $user
+          echo Contraseña: $password
 
       - name: imprimir variables
         if: ${{ env.platform == 'windows' }}
