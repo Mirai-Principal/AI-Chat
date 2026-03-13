@@ -42,6 +42,10 @@ jobs:
         if: ${{ env.user != '' && env.password != '' }}
         run: |
           echo "Usuario y contraseña correctos"
+          
+      - name: Mostrar variables
+        run: |
+          echo PROJECT_VERSION: ${{ vars.PROJECT_VERSION }}
 
       - name: Mostrar variables por defecto
         run: |
