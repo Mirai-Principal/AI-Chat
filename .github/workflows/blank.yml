@@ -33,4 +33,14 @@ jobs:
           echo Cuenta: $account
           echo Registro: $registry
           echo Imagen: $image
+          echo Tag: $tag
+          
+      - name: imprimir variables
+        if: ${{ env.platform == 'windows' }}
+        run: |
+          echo Plataforma: ${{ env.platform }}
+          echo Region: ${{ env.region }}
+          echo Cuenta: ${{ env.account }}
+          echo Registro: ${{ env.registry }}
+          echo Imagen: ${{ env.image }}
           echo Tag: ${{ env.tag }}
